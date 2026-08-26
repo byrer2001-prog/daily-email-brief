@@ -1,0 +1,18 @@
+{
+  "email": "your_qq_number@qq.com",
+  "client_id": "d3590ed6-52b3-4102-aeff-aad2292ab01c",
+  "tenant": "common",
+  "claude_api_key": "",
+  "llm_backend": "ollama",
+  "ollama_model": "qwen2.5:7b",
+  "ollama_base_url": "http://localhost:11434",
+  "claude_model": "claude-opus-5",
+  "hours": 24,
+  "max_emails": 50,
+  "scan_recent": 100,
+  "max_body_chars": 1000,
+  "output_dir": "briefs",
+  "imap_server": "imap.qq.com",
+  "imap_port": 993,
+  "imap_password": "在这里填QQ邮箱授权码"
+}
