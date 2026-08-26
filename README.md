@@ -111,3 +111,7 @@ powershell -ExecutionPolicy Bypass -File .\setup_task.ps1
 - 邮件**正文会截断到 1000 字符**（`max_body_chars`）后发送给 Claude API 做摘要。请确认公司邮件政策允许内容外发给第三方 LLM；如不允许，请勿继续使用，或联系 IT 申请官方渠道。
 - Claude API 按 token 计费。每天几十封 × 约 1KB 正文，量级极小（约每天 < $0.01 量级）；想更省可在 `config.json` 切到 `claude-haiku-4-5`。
 - token 与 API key 保存在本项目目录内，请勿外泄；不要把 `token_cache.json` 提交到任何仓库。
+
+## 许可证
+
+[MIT](LICENSE) — 可自由使用、修改与分发。
