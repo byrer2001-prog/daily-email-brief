@@ -2,6 +2,8 @@
 
 自动读取你的**邮箱收件箱最近 24 小时**的邮件，用**本地大模型（Ollama）**将每封邮件内容**翻译成通顺中文**，发件人显示为简洁的联系人名称，输出为 JSON 简报，并每天定时自动运行。
 
+> **English**: A daily email digest tool. Fetches the last 24h of inbox emails via IMAP (QQ Mail / Microsoft 365), translates each into fluent Chinese with a **local Ollama LLM** (free, private — content never leaves your machine), outputs a JSON brief, and auto-runs daily via Windows Task Scheduler. Optional Claude API backend.
+
 - **翻译完全免费**：默认调用**本地 Ollama**（邮件内容不出本机），也预留了 Claude API 后端可随时切换。
 - **支持两类邮箱**：
   - QQ 邮箱等个人邮箱：账号 + 授权码（最简单，推荐）
@@ -9,6 +11,38 @@
 
 ```
 Outlook 收件箱 ──IMAP──> 拉取邮件 ──> 本地 Ollama 翻译成中文 ──> briefs/daily_brief_YYYY-MM-DD.json
+```
+
+## 示例输出
+
+```
+===== 今日邮件简报（2026-08-25） =====
+· Microsoft 帐户团队 | 你的一次性代码
+   你好！我们已收到你要求获得 Microsoft 帐户一次性代码的申请。
+   你的一次性代码为: ******
+   请仅在官方网站或应用上输入此代码。请勿与任何人共享。
+· SCOR Careers | Confirm your identity for job: Catastrophe Risk Intern
+   我们需要您确认身份，以便您的求职申请被考虑。请使用此代码确认身份：******。
+   该代码将在10分钟后失效。
+=========================
+```
+
+JSON 文件（`briefs/daily_brief_2026-08-25.json`）：
+
+```json
+{
+  "generated_at": "2026-08-25T09:05:00+08:00",
+  "period": {"start": "2026-08-24T09:05:00+08:00", "end": "2026-08-25T09:05:00+08:00"},
+  "total": 2,
+  "emails": [
+    {
+      "from": "Microsoft 帐户团队",
+      "subject": "你的一次性代码",
+      "received_at": "2026-08-25T07:57:00+08:00",
+      "summary": "你好！我们已收到你要求获得 Microsoft 帐户一次性代码的申请……"
+    }
+  ]
+}
 ```
 
 ## 目录结构
