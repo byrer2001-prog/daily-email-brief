@@ -1,0 +1,11 @@
+# 敏感信息：真实配置（含邮箱授权码/密码）与 OAuth token 缓存
+config.json
+token_cache.json
+
+# 生成的简报（含真实邮件内容）
+briefs/
+
+# Python 环境与缓存
+.venv/
+__pycache__/
+*.pyc
